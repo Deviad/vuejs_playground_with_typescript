@@ -11,7 +11,7 @@ import {mapActions, mapGetters} from "vuex";
   {
     methods: {
       ...mapActions({
-        doIncrement: 'incrementAsync', // map `this.increment()` to `this.$store.dispatch('increment')`
+        doIncrement: 'userModule/incrementAsync', // map `this.increment()` to `this.$store.dispatch('increment')`
         // `mapActions` also supports payloads:
         // 'incrementBy' // map `this.incrementBy(amount)` to `this.$store.dispatch('incrementBy', amount)`
       })
@@ -19,7 +19,7 @@ import {mapActions, mapGetters} from "vuex";
     computed: {
       ...mapGetters({
         // map `this.doneCount` to `this.$store.getters.doneTodosCount`
-        getIncrement: 'increment'
+        getIncrement: 'userModule/increment'
       })
 
     }

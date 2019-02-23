@@ -5,6 +5,7 @@ import userMutations from "@/store/mutations/userMutations";
 import {userGetters} from "@/store/getters";
 
 export default {
+  namespaced: true,
   state: userState,
   mutations: userMutations,
   actions: userActions,
