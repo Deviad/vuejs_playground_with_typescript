@@ -15,6 +15,7 @@ const userActions: IUserActions = {
     dispatch('startLoader');
     setTimeout(() => {
       commit(userMutationTypes.login);
+      dispatch('counterModule/incrementAsync', null, { root: true });
       dispatch('stopLoader');
     }, 1000)
   },
