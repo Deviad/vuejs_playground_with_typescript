@@ -5,6 +5,7 @@ import './hello-world.component.scss';
 import WithRender from './hello-world.component.html';
 import classnames from 'classnames';
 import {mapActions, mapGetters} from "vuex";
+import {exhaustMap, map} from 'rxjs/operators';
 
 @WithRender
 @Component(
@@ -41,7 +42,6 @@ export default class HelloWorldComponent extends Vue {
 
     console.log("gg this.setActive", this.setActive);
   }
-
   state = {
     extendedClassName: classnames({
       [this.className]: this.className,
