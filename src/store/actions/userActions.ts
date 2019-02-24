@@ -1,9 +1,26 @@
-import {IUserActions, userActionTypes} from "@/store/actions";
+import {IUserActions, userMutationTypes} from "@/store/actions";
 
-export default {
-  incrementAsync ({ commit }) {
+const userActions: IUserActions = {
+  startLoader ({ commit }) {
+    commit(userMutationTypes.startLoader);
+  },
+  stopLoader ({ commit }) {
+    commit(userMutationTypes.stopLoader);
+  },
+  loginAsync ({ commit,dispatch }) {
+    dispatch('startLoader');
     setTimeout(() => {
-      commit(userActionTypes.increment)
-    }, 0)
+      commit(userMutationTypes.login);
+      dispatch('stopLoader');
+    }, 1000)
+  },
+  logoutAsync ({ commit, dispatch }) {
+    dispatch('startLoader');
+    setTimeout(() => {
+      commit(userMutationTypes.logout);
+      dispatch('stopLoader');
+    }, 1000);
   }
-} as IUserActions;
+};
+
+export default userActions;

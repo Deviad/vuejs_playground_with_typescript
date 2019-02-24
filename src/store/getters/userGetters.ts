@@ -1,7 +1,13 @@
+import {IUserState} from "@/store/states";
 import {IUserGetters} from "@/store/getters";
 
-export default {
-  increment (state) {
-    return state.count;
+const userGetters: IUserGetters = {
+  isLogged (state: IUserState) {
+    return state.isLogged;
+  },
+  isLoginLoading (state: IUserState) {
+    return state.isLoginLoading;
   }
-} as IUserGetters
+};
+
+export default userGetters;

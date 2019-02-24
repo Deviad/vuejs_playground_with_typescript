@@ -3,5 +3,6 @@ import {IRootState} from "@/store/states/IRootState";
 import {GetterTree} from "vuex";
 
 export default interface IUserGetters extends GetterTree<IUserState, IRootState>  {
-  increment: (state: IState) => number;
+  isLogged: (state: IUserState) => boolean;
+  isLoginLoading: (state: IUserState) => boolean;
 }

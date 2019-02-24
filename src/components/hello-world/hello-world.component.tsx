@@ -11,17 +11,22 @@ import {mapActions, mapGetters} from "vuex";
   {
     methods: {
       ...mapActions({
-        doIncrement: 'userModule/incrementAsync', // map `this.increment()` to `this.$store.dispatch('increment')`
+        doIncrement: 'counterModule/incrementAsync', // map `this.increment()` to `this.$store.dispatch('increment')`
         // `mapActions` also supports payloads:
         // 'incrementBy' // map `this.incrementBy(amount)` to `this.$store.dispatch('incrementBy', amount)`
+        doLogin: 'userModule/loginAsync',
+        doLogout: 'userModule/logoutAsync',
+        doStartLoader: "userModule/startLoader",
+        doStopLoader: "userModule/stopLoader"
       })
     },
     computed: {
       ...mapGetters({
         // map `this.doneCount` to `this.$store.getters.doneTodosCount`
-        getIncrement: 'userModule/increment'
+        getIncrement: 'counterModule/increment',
+        getIsLogged: 'userModule/isLogged',
+        getIsLoginLoading: 'userModule/isLoginLoading'
       })
-
     }
   }
 )
