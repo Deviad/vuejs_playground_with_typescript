@@ -1,9 +1,9 @@
 import {IAction} from "@/store/actions";
-import {IIndexable} from "@/types";
+import {IContext} from "@/store/actions";
 
 export default interface IUserActions extends IAction {
-  loginAsync: (context: IIndexable)=> void;
-  logoutAsync: (context: IIndexable)=> void;
-  startLoader: (context: IIndexable)=> void;
-  stopLoader: (context: IIndexable)=> void;
+  loginAsync: (context: IContext)=> void;
+  logoutAsync: (context: IContext)=> void;
+  startLoader: (context: IContext)=> void;
+  stopLoader: (context: IContext)=> void;
 }
