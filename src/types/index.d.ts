@@ -8,13 +8,13 @@ export declare interface IIndexable {
   [key: number]: any;
 }
 
-declare module "vue/types/options" {
-
-
-  interface ComponentOptions<V extends Vue> {
-    subscriptions?: Observables | ((this: V) => Observables)
-    domStreams?: string[]
-    observableMethods?: string[] | Record<string, string>
-  }
-}
+// declare module "vue/types/options" {
+//
+//
+//   interface ComponentOptions<V extends Vue> {
+//     subscriptions?: Observables | ((this: V) => Observables)
+//     domStreams?: string[]
+//     observableMethods?: string[] | Record<string, string>
+//   }
+// }
 export type AppState = IUserState | ICounterState;
